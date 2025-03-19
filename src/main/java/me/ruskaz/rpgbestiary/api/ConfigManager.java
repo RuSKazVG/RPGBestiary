@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ConfigManager {
 
@@ -28,6 +29,10 @@ public class ConfigManager {
     private final List<Integer> ignoredPosList;
 
     private final String bestiaryKillMessage;
+    private final String bestiaryMobRemovedMessage;
+    private final String bestiaryMobNotRemovedMessage;
+    private final String bestiaryMobAddedMessage;
+    private final String bestiaryMobNotAddedMessage;
 
     private final List<BestiaryItem> plugList;
     private final List<BestiaryItem> mobItemsList;
@@ -59,9 +64,13 @@ public class ConfigManager {
 
         this.bestiaryName = config.getString("bestiarySettings.name");
         this.bestiarySize = config.getInt("bestiarySettings.size");
-        this.ignoredPosList = config.getIntegerList("bestiarySettings.ignoredPositions");
+        this.ignoredPosList = config.getIntegerList("bestiarySettings.ignoredPositions").stream().map(x -> x - 1).toList();
 
         this.bestiaryKillMessage = config.getString("bestiaryKillMessage");
+        this.bestiaryMobRemovedMessage = config.getString("bestiaryMobRemovedMessage");
+        this.bestiaryMobNotRemovedMessage = config.getString("bestiaryMobNotRemovedMessage");
+        this.bestiaryMobAddedMessage = config.getString("bestiaryMobAddedMessage");
+        this.bestiaryMobNotAddedMessage = config.getString("bestiaryMobNotAddedMessage");
 
         this.plugList = new ArrayList<>();
         this.mobItemsList = new ArrayList<>();
@@ -115,6 +124,22 @@ public class ConfigManager {
 
     public String getBestiaryKillMessage() {
         return bestiaryKillMessage;
+    }
+
+    public String getBestiaryMobRemovedMessage() {
+        return bestiaryMobRemovedMessage;
+    }
+
+    public String getBestiaryMobNotRemovedMessage() {
+        return bestiaryMobNotRemovedMessage;
+    }
+
+    public String getBestiaryMobAddedMessage() {
+        return bestiaryMobAddedMessage;
+    }
+
+    public String getBestiaryMobNotAddedMessage() {
+        return bestiaryMobNotAddedMessage;
     }
 
     public List<BestiaryItem> getPlugList() {

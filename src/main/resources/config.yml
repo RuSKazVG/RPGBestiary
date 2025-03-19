@@ -3,8 +3,12 @@ mythicMobsSupport: false
 bestiarySettings:
   name: '&b&lBestiary'
   size: 36 # has to be dividable by 9
-  ignoredPositions: [ 1, 2, 6 ] # positions that Bestiary will not place MOBS into
+  ignoredPositions: [ 1, 2, 6 ] # позиции ГУИ, в которые Бестиарий НЕ БУДЕТ помещать мобов
 
 showUnrevealedMobs: false
 
-bestiaryKillMessage: '&bYou have killed %mob_name%! It appeared in your &bBestiary&f! &8(/bestiary).'
+bestiaryKillMessage: '&bВы убили %mob_name%! Он появился в Вашем &1Бестиарии&f! &8(/bestiary).'
+bestiaryMobRemovedMessage: '&bМоб %mob_name% был удалён из Бестиария игрока %player%.'
+bestiaryMobNotRemovedMessage: '&bМоб %mob_name% не был обнаружен в Бестиарии игрока %player%.'
+bestiaryMobAddedMessage: '&bМоб %mob_name% был добавлен в Бестарий игрока %player%.'
+bestiaryMobNotAddedMessage: '&bМоб %mob_name% уже в Бестарии игрока %player%.'

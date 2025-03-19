@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import java.util.UUID;
 
 public class Command implements CommandExecutor {
+
     @Override
     public boolean onCommand(CommandSender commandSender, org.bukkit.command.Command command, String s, String[] args) {
         if (args.length == 3) {
@@ -26,9 +27,11 @@ public class Command implements CommandExecutor {
                     String list = DatabaseManager.getPlayerKilledLine(uuid);
                     if (list.contains(args[2])) {
                         DatabaseManager.removeMobFromDatabase(uuid, args[2]);
-                        commandSender.sendMessage("You have removed " + args[2] + " from " + args[1] + "'s Bestiary.");
+                        String message = RPGBestiary.transformString(RPGBestiary.configManager.getBestiaryMobRemovedMessage().replaceAll("%mob_name%", args[2]).replaceAll("%player%", args[1]));
+                        commandSender.sendMessage(message);
                     } else {
-                        commandSender.sendMessage("Mob " + args[2] + " was not found in " + args[1] + "'s Bestiary.");
+                        String message = RPGBestiary.transformString(RPGBestiary.configManager.getBestiaryMobNotRemovedMessage().replaceAll("%mob_name%", args[2]).replaceAll("%player%", args[1]));
+                        commandSender.sendMessage(message);
                     }
                 } else if (args[0].equalsIgnoreCase("add")) {
                     UUID uuid;
@@ -39,11 +42,12 @@ public class Command implements CommandExecutor {
                         uuid = p.getUniqueId();
                     }
                     String list = DatabaseManager.getPlayerKilledLine(uuid);
-                    if (list.contains(args[2])) {
-                        DatabaseManager.addKilledMobToDatabase(uuid, args[2]);
-                        commandSender.sendMessage("You have added " + args[2] + " to " + args[1] + "'s Bestiary.");
+                    if (!list.contains(args[2])) {
+                        String message = RPGBestiary.transformString(RPGBestiary.configManager.getBestiaryMobAddedMessage().replaceAll("%mob_name%", args[2]).replaceAll("%player%", args[1]));
+                        commandSender.sendMessage(message);
                     } else {
-                        commandSender.sendMessage("Mob " + args[2] + " is already in " + args[1] + "'s Bestiary.");
+                        String message = RPGBestiary.transformString(RPGBestiary.configManager.getBestiaryMobNotAddedMessage().replaceAll("%mob_name%", args[2]).replaceAll("%player%", args[1]));
+                        commandSender.sendMessage(message);
                     }
                 }
                 return true;

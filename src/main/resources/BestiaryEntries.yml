@@ -1,24 +1,24 @@
 defaultItems:
-  unrevealedMob: # default and necessary for showUnrevealedMobs to work, do not add position for it
+  unrevealedMob:
     id: ENDERMAN_SPAWN_EGG
     name: '&7&l?'
     lore:
-      - '&8You have not unlocked this mob yet.'
+      - '&8Вы ещё не открыли этого моба.'
     model: 1000
   nextPage:
     id: ARROW
-    name: '&a&lNext page'
+    name: '&a&lСледующая страница'
     pos: 35
   prevPage:
     id: CROSSBOW
-    name: '&c&lPrevious page'
+    name: '&c&lПредыдущая страница'
     pos: 34
 
 
 bestiaryItems:
   plug1:
     id: GRAY_STAINED_GLASS_PANE
-    name: '&b&lBESTIARY'
+    name: '&b&lБЕСТИАРИЙ'
     pos: 0
     model: 0 # customModelData
   plug2:
@@ -58,22 +58,22 @@ bestiaryItems:
 bestiaryMobs:
   sans:
     mobInfo:
-      mythicMobType: 'sansTheSkeleton' # leave empty or do not add at all if MM support is disabled.
-                                       # mythicMobType overrides default mobType and name
+      mythicMobType: 'sansTheSkeleton' # оставьте пустым или не трогайте если поддержка MythicMobs выключена
+                                       # mythicMobType приоритетнее mobType и name
       mobType: SKELETON
-      name: '&7&lSANS'
+      name: '&7&lСАНС'
     itemInfo:
       id: PLAYER_HEAD
-      headSkin: '64528b3229660f3dfab42414f59ee8fd01e80081dd3df30869536ba9b414e089' # can be either nickname or UUID
-      name: '&7&lSANS'
+      headSkin: '64528b3229660f3dfab42414f59ee8fd01e80081dd3df30869536ba9b414e089' # может быть ником или UUID
+      name: '&7&lСАНС'
       lore:
-        - "SANS THE SKELETON"
-        - "&a&lHEALTH&r&f: &c20"
-        - "JOKES SOMETIMES"
+        - "&a&lЗДОРОВЬЕ&r&f: &c20"
+        - "САНС СКЕЛЕТ"
+        - "ИНОГДА ШУТИТ"
       model: 0
   slimeySlime:
     mobInfo:
       mobType: SLIME
     itemInfo:
       id: SLIME_BALL
-      name: 'SLIME'
+      name: 'СЛАЙМ'

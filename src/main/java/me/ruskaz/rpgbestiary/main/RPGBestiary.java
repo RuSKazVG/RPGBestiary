@@ -32,6 +32,7 @@ public final class RPGBestiary extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new Events(), this);
 
         Bukkit.getServer().getPluginCommand("rpgbestiary").setExecutor(new Command());
+        Bukkit.getServer().getPluginCommand("rpgbestiary").setTabCompleter(new RPGTabCompleter());
 
         bestiaryPage = new HashMap<>();
     }

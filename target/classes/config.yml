@@ -1,0 +1,10 @@
+mythicMobsSupport: false
+
+bestiarySettings:
+  name: '&b&lBestiary'
+  size: 36 # has to be dividable by 9
+  ignoredPositions: [ 1, 2, 6 ] # positions that Bestiary will not place MOBS into
+
+showUnrevealedMobs: false
+
+bestiaryKillMessage: '&bYou have killed %mob_name%! It appeared in your &bBestiary&f! &8(/bestiary).'

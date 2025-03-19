@@ -1,0 +1,25 @@
+name: RPGBestiary
+version: '1.0'
+main: me.ruskaz.rpgbestiary.main.RPGBestiary
+api-version: '1.14'
+description: 'A plugin to store and read your killed mobs!'
+softdepend:
+  - MythicMobs
+
+commands:
+  rpgbestiary:
+    description: Bestiary main command.
+    aliases: bestiary
+    usage: 'rpgbestiary [add/remove] [nickname] [mobID]'
+    permission: rpgbestiary.command
+
+permissions:
+  rpgbestiary.command:
+    description: Allows user to open Bestiary.
+    default: not op
+  rpgbestiary.reload:
+    description: Allows user to reload Bestiary's files.
+    default: op
+  rpgbestiary.modify:
+    description: Allows user to use add/remove subcommands.
+    default: op

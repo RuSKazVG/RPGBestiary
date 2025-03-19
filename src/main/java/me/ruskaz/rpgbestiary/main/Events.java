@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -90,13 +89,6 @@ public class Events implements Listener {
 
                 BestiaryManager.openBestiary(p, page);
             }
-        }
-    }
-
-    @EventHandler
-    public void clearOnClosing(InventoryCloseEvent e) {
-        if (e.getView().getTitle().equals(RPGBestiary.transformString(RPGBestiary.configManager.getBestiaryName()))) {
-            RPGBestiary.bestiaryPage.remove(e.getPlayer().getUniqueId());
         }
     }
 }

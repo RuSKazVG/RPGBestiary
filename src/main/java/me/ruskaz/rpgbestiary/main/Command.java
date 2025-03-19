@@ -49,7 +49,7 @@ public class Command implements CommandExecutor {
                 return true;
             }
         }
-        else if (args[0].equalsIgnoreCase("reload") && commandSender.hasPermission("rpgbestiary.reload")) {
+        else if (args.length == 1 && args[0].equalsIgnoreCase("reload") && commandSender.hasPermission("rpgbestiary.reload")) {
             RPGBestiary.configManager = new ConfigManager();
             return true;
         }
